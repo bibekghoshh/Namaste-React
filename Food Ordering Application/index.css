@@ -1,0 +1,61 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0px 50px;
+}
+.list-item{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    font-size: 20px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+.list-item>Li:hover{
+    cursor: pointer;
+}
+.app-logo{
+    width: 125px;
+}
+.search-container{
+    height: 150px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+}
+.search-container>input{
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 40vw;
+    border-radius: 20px;
+}
+.search-btn{
+    padding: 10px 30px;
+    background-color: #d18d34;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+}
+.Res-Container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.res-card{
+    width: 220px;
+    /* border: 1px solid grey; */
+    padding: 5px;
+    background-color: #ffefef;
+    border-radius: 10px;
+}
+.res-img{
+    width: 220px;
+    height: 150px;
+    border-radius: 20px;
+}
