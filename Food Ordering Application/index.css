@@ -35,11 +35,19 @@
 }
 .search-btn{
     padding: 10px 30px;
-    background-color: #d18d34;
     border: none;
     color: #fff;
     cursor: pointer;
+    background-color: #d18d34;
     font-weight: 600;
+}
+.top-restaurant-btn{
+    padding: 5px 8px;
+    background-color: #d18d34;
+    border: none;
+    cursor: pointer;
+    color: #ffffff;
+    margin-bottom: 10px;
 }
 .Res-Container{
     display: flex;
