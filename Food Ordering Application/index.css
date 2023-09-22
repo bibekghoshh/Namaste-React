@@ -41,6 +41,14 @@
     background-color: #d18d34;
     font-weight: 600;
 }
+.login-btn{
+    padding: 10px 30px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #d18d34;
+    font-weight: 600;
+}
 .top-restaurant-btn{
     padding: 5px 8px;
     background-color: #d18d34;
@@ -57,6 +65,14 @@
 }
 .res-card{
     width: 220px;
+    /* border: 1px solid grey; */
+    padding: 5px;
+    background-color: #ffefef;
+    border-radius: 10px;
+}
+.fake-res-card{
+    width: 220px;
+    height: 300px;
     /* border: 1px solid grey; */
     padding: 5px;
     background-color: #ffefef;
