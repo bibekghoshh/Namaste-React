@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [buttonText, setButtonText] = useState("Login");
@@ -13,9 +14,9 @@ const Header = () => {
       </div>
       <div>
         <ul className="list-item">
-          <li>Home</li>
-          <li>Contact us</li>
-          <li>Sign In</li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/contact">Contact us</Link></li>
+          <li><Link to="/about">About Us</Link></li>
           <li>Cart</li>
           <button
             className="login-btn"

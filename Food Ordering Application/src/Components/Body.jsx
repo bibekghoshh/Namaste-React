@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
-  const [newRestaurants,setNewRestaurants]=useState([]);
-  
-  const [searchText,setSearchText]=useState("");
+  const [newRestaurants, setNewRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -35,12 +36,19 @@ const Body = () => {
           id="search"
           placeholder="Enter Your Location"
           value={searchText}
-          onChange={(e)=>setSearchText(e.target.value)}
+          onChange={(e) => setSearchText(e.target.value)}
         />
-        <button className="search-btn" onClick={()=>{
-           const filterRestaurants= newRestaurants.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
-           setListOfRestaurants(filterRestaurants);
-        }}>Search</button>
+        <button
+          className="search-btn"
+          onClick={() => {
+            const filterRestaurants = newRestaurants.filter((res) =>
+              res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            );
+            setListOfRestaurants(filterRestaurants);
+          }}
+        >
+          Search
+        </button>
       </div>
       <div>
         <button
@@ -61,7 +69,9 @@ const Body = () => {
       ) : (
         <div className="Res-Container">
           {listOfRestaurants.map((restaurant) => (
-            <RestaurentCard key={restaurant.info.id} resdata={restaurant} />
+            <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
+              <RestaurentCard key={restaurant.info.id} resdata={restaurant} />
+            </Link>
           ))}
         </div>
       )}
