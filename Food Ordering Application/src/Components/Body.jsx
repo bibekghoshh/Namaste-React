@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
+import {Link} from 'react-router-dom';
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
