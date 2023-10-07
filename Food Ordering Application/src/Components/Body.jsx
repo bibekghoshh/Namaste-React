@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import RestaurentCard from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [newRestaurants, setNewRestaurants] = useState([]);
+  const onlineStatus=useOnlineStatus();
 
   const [searchText, setSearchText] = useState("");
 
@@ -27,6 +29,17 @@ const Body = () => {
       Json?.data.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
+
+  if(onlineStatus===false){
+    return (
+      <div>
+        <h1>Opps</h1>
+        <h2>You are Offline</h2>
+        <h3>Please connect to Internet for Online</h3>
+      </div>
+    )
+  }
+
   return (
     <div>
       <div className="search-container">
