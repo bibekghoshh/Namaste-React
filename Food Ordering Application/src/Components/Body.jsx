@@ -42,17 +42,18 @@ const Body = () => {
 
   return (
     <div>
-      <div className="search-container">
+      <div className="flex items-center justify-center w-full my-12">
         <input
           type="text"
           name="text"
           id="search"
+          className="px-6 py-2 text-lg rounded-full w-[400px] border-gray-400 border-2"
           placeholder="Enter Your Location"
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <button
-          className="search-btn"
+          className="px-4 py-2 ml-4 text-white bg-blue-400 rounded-lg"
           onClick={() => {
             const filterRestaurants = newRestaurants.filter((res) =>
               res.info.name.toLowerCase().includes(searchText.toLowerCase())
@@ -63,9 +64,10 @@ const Body = () => {
           Search
         </button>
       </div>
+      
       <div>
         <button
-          className="top-restaurant-btn"
+          className="px-4 py-2 ml-4 font-medium text-white bg-blue-500 rounded-lg"
           onClick={() => {
             const filterRes = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4.2
@@ -80,7 +82,7 @@ const Body = () => {
       {listOfRestaurants.length === 0 ? (
         <Shimmer />
       ) : (
-        <div className="Res-Container">
+        <div className="flex flex-wrap justify-center gap-12">
           {listOfRestaurants.map((restaurant) => (
             <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
               <RestaurentCard key={restaurant.info.id} resdata={restaurant} />

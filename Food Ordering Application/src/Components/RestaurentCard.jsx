@@ -5,18 +5,23 @@ const RestaurentCard = ({ resdata }) => {
   const { name, avgRating, cuisines, costForTwo, cloudinaryImageId } =
     resdata?.info;
   return (
-    <div className="res-card">
+    <div className="flex flex-col bg-slate-300 w-[250px] h-[340px] rounded-md">
       <div>
         <img
-          className="res-img"
-          src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+cloudinaryImageId}
+          className="w-full h-[200px] rounded-md"
+          src={
+            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+            cloudinaryImageId
+          }
           alt="res-img"
         />
       </div>
       <div>
-        <h2>{name}</h2>
+        <h2 className="ml-2 text-lg font-medium">{name}</h2>
         <p>⭐{avgRating}</p>
-        <p>{cuisines.join(", ")}</p>
+        <div className="w-[250px] h-7 overflow-hidden">
+          <p>{cuisines.join(", ")}</p>
+        </div>
         <h3>{costForTwo}</h3>
       </div>
     </div>

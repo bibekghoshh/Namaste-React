@@ -6,16 +6,16 @@ const Header = () => {
   const [buttonText, setButtonText] = useState("Login");
   const onlineStatus=useOnlineStatus();
   return (
-    <div className="flex">
-      <div className="header-logo">
+    <div className="flex items-center justify-between mx-10 font-medium">
+      <div className="w-[200px]">
         <img
-          className="w-36"
+          className="w-28 "
           src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-food-delivery-logo-design-png-image_5392527.jpg"
           alt="App Logo"
         />
       </div>
       <div>
-        <ul className="list-item">
+        <ul className="flex gap-12 ">
           <p>Check status : {onlineStatus?"🟢":"❌"}</p>
           <li><Link to="/">Home</Link></li>
           <li><Link to="/contact">Contact us</Link></li>
