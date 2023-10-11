@@ -6,10 +6,10 @@ const Header = () => {
   const [buttonText, setButtonText] = useState("Login");
   const onlineStatus=useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex">
       <div className="header-logo">
         <img
-          className="app-logo"
+          className="w-36"
           src="https://png.pngtree.com/png-clipart/20200727/original/pngtree-food-delivery-logo-design-png-image_5392527.jpg"
           alt="App Logo"
         />
