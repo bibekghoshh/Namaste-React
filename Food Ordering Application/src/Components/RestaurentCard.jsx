@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 import { CND_URL } from "../utils/constrains";
+import UserContext from "../utils/UserContext";
 
 const RestaurentCard = ({ resdata }) => {
   // console.log(resdata);
   const { name, avgRating, cuisines, costForTwo, cloudinaryImageId } =
     resdata?.info;
+
+    const {logUser}=useContext(UserContext);
+
   return (
     <div className="flex flex-col bg-slate-300 w-[250px] h-[340px] rounded-md">
       <div>
@@ -22,6 +26,7 @@ const RestaurentCard = ({ resdata }) => {
         </div>
         <h3>{costForTwo}</h3>
       </div>
+      <h6>{logUser}</h6>
     </div>
   );
 };

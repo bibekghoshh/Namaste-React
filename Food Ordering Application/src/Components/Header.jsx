@@ -1,10 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [buttonText, setButtonText] = useState("Login");
   const onlineStatus=useOnlineStatus();
+  const data=useContext(UserContext);
+  const {logUser}=data;
+  // console.log(logUser);
+  
   return (
     <div className="flex items-center justify-between mx-10 font-medium">
       <div className="w-[200px]">
