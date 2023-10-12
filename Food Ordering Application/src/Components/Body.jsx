@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withPromotedLabel } from "./RestaurentCard";
 import Shimmer from "./Shimmer";
 import {Link} from 'react-router-dom';
 import useOnlineStatus from "../utils/useOnlineStatus";
@@ -8,6 +8,7 @@ const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [newRestaurants, setNewRestaurants] = useState([]);
   const onlineStatus=useOnlineStatus();
+  // const RestaurantsCardPromoted=withPromotedLabel(RestaurentCard);
 
   const [searchText, setSearchText] = useState("");
 
