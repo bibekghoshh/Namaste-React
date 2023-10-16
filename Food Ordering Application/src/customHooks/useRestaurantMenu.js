@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { MENU_ITEM } from "./constrains";
+import { MENU_ITEM } from "../utils/constrains";
 
 const useRestaurantMenu=(resId)=>{
     const [resInfo,setResInfo]=useState(null);

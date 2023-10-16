@@ -11,7 +11,7 @@ import { Outlet } from "react-router-dom";
 import RestaurantMenu from "./src/Components/RestaurantMenu";
 import UserContext from "./src/utils/UserContext";
 import { Provider } from "react-redux";
-import appStore from "./src/utils/appStore";
+import appStore from "./src/redux/appStore";
 import Cart from "./src/Components/Cart";
 // import Grocery from "./src/Components/Grocery";
 
