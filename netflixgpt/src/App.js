@@ -1,8 +1,9 @@
+import Login from "./components/Login";
 
 function App() {
   return (
     <div>
-      Bibek
+      <Login/>
     </div>
   );
 }
