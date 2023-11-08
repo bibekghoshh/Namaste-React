@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import validate from "../utils/validate";
 
 const Login = () => {
     const [isSignIn,setIsSignIn]=useState(false);
@@ -12,10 +13,15 @@ const Login = () => {
     const email=useRef();
     const password=useRef();
     
+    const handleButtonClick=()=>{
+      const message=validate(email.current.value,password.current.value);
+      setErrorMessage(message);
+      console.log(name.current.value);
+    }
     
   return (
     <div>
-      <div className="absolute w-full h-[750px] bg-black opacity-50"></div>
+      <div className="absolute w-full h-[750px] min-h-[100vh] bg-black opacity-50"></div>
       <div>
         <img
           className="absolute w-48 ]"
@@ -25,19 +31,19 @@ const Login = () => {
       </div>
       <div>
         <img
-          className="object-cover w-full h-[750px]"
+          className="object-cover w-full h-[750px] min-h-[100vh]"
           src="https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt=""
         />
       </div>
       <div className="flex items-center justify-center w-full">
-        <form className="absolute flex flex-col gap-5 px-16 py-20 text-white bg-black opacity-80 top-28">
+        <form className="absolute flex flex-col gap-5 px-16 py-20 text-white bg-black opacity-80 top-28" onSubmit={e=>e.preventDefault()}>
           <p className="mb-5 text-3xl font-semibold">{isSignIn?"Sign In":"Sign Up"}</p>
-          {!isSignIn && <input type="text" placeholder="Your Name" ref={name} className="px-4 py-3 rounded-md w-80"/>}
+          {!isSignIn && <input type="text" placeholder="Your Name" ref={name} className="px-4 py-3 text-black rounded-md w-80"/>}
           <input type="email" placeholder="Email" ref={email} className="px-4 py-3 text-black rounded-md w-80"/>
           <input type="password" placeholder="Password" ref={password} className="px-4 py-3 text-black rounded-md w-80"/>
           <p>{errorMessage}</p>
-          <button className="py-3 text-lg font-medium bg-red-600 rounded-md">{isSignIn?"Sign In":"Sign Up"}</button>
+          <button onClick={handleButtonClick} className="py-3 text-lg font-medium bg-red-600 rounded-md">{isSignIn?"Sign In":"Sign Up"}</button>
           <p className="text-slate-500" onClick={switchBetweenSignInSignUp}>{isSignIn?"New to Netflix? ":"Already have account? "}<span className="text-white cursor-pointer hover:underline">{isSignIn?"Sign up now":"Sign In"}</span></p>
         </form>
       </div>
